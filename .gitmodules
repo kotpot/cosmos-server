@@ -1,6 +1,6 @@
-[submodule "netease-cloud-music-service"]
-	path = netease-cloud-music-service
+[submodule "services/netease-cloud-music-service"]
+	path = services/netease-cloud-music-service
 	url = https://github.com/Binaryify/NeteaseCloudMusicApi.git
-[submodule "qq-music-service"]
-	path = qq-music-service
+[submodule "services/qq-music-service"]
+	path = services/qq-music-service
 	url = https://github.com/jsososo/QQMusicApi.git
