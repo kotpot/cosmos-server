@@ -1,0 +1,35 @@
+[versions]
+kotlin = "1.9.10"
+springboot = "3.1.4"
+spring-dependency-manager = "1.1.3"
+asciidoctor = "3.3.2"
+
+[libraries]
+kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect" }
+kotlin-jackson = { group = "com.fasterxml.jackson.module", name = "jackson-module-kotlin" }
+
+kotlinx-coroutines-reactor = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-reactor" }
+
+springboot-redis = { group = "org.springframework.boot", name = "spring-boot-starter-data-redis" }
+springboot-webflux = { group = "org.springframework.boot", name = "spring-boot-starter-webflux" }
+springboot-devtools = { group = "org.springframework.boot", name = "spring-boot-devtools" }
+
+springboot-test = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
+springboot-restdocs-test = { group = "org.springframework.restdocs", name = "spring-restdocs-webtestclient" }
+
+reactor-kotlin-extensions = { group = "io.projectreactor.kotlin", name = "reactor-kotlin-extensions" }
+reactor-test = { group = "io.projectreactor", name = "reactor-test" }
+
+mysql-jconnector = { group = "com.mysql", name = "mysql-connector-j" }
+
+
+
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-plugin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+spring-boot = { id = "org.springframework.boot", version.ref = "springboot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-manager" }
+asciidoctor = { id = "org.asciidoctor.jvm.convert", version.ref = "asciidoctor" }
+
+[bundles]

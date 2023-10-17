@@ -1,11 +1,11 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "3.1.4"
-    id("io.spring.dependency-management") version "1.1.3"
-    id("org.asciidoctor.jvm.convert") version "3.3.2"
-    kotlin("jvm") version "1.8.22"
-    kotlin("plugin.spring") version "1.8.22"
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.plugin.spring)
+    alias(libs.plugins.spring.boot)
+    alias(libs.plugins.spring.dependency.management)
+    alias(libs.plugins.asciidoctor)
 }
 
 group = "org.kotpot"
@@ -22,17 +22,22 @@ repositories {
 val snippetsDir by extra { file("build/generated-snippets") }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-redis")
-    implementation("org.springframework.boot:spring-boot-starter-webflux")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-    implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
-    implementation("org.jetbrains.kotlin:kotlin-reflect")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-    runtimeOnly("com.mysql:mysql-connector-j")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testImplementation("io.projectreactor:reactor-test")
-    testImplementation("org.springframework.restdocs:spring-restdocs-webtestclient")
+    implementation(libs.kotlin.reflect)
+    implementation(libs.kotlin.jackson)
+
+    implementation(libs.kotlinx.coroutines.reactor)
+
+    implementation(libs.springboot.redis)
+    implementation(libs.springboot.webflux)
+
+    implementation(libs.reactor.kotlin.extensions)
+
+    implementation(libs.mysql.jconnector)
+
+    developmentOnly(libs.springboot.devtools)
+    testImplementation(libs.springboot.test)
+    testImplementation(libs.springboot.restdocs.test)
+    testImplementation(libs.reactor.test)
 }
 
 tasks {
