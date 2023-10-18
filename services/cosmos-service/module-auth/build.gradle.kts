@@ -12,6 +12,11 @@ dependencies {
 
     implementation(libs.reactor.kotlin.extensions)
 
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.serialization)
+    implementation(libs.ktor.client.jackson)
+    implementation(libs.ktor.client.cio)
+
     implementation(project(":lib-pb"))
 }
 
