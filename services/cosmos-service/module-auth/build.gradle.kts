@@ -1,7 +1,8 @@
 plugins {
-    alias(libs.plugins.kotlin.plugin.spring)
+    alias(libs.plugins.kotlin.spring)
     alias(libs.plugins.spring.boot)
     alias(libs.plugins.spring.dependency.management)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 dependencies {
@@ -10,6 +11,8 @@ dependencies {
     implementation(libs.springboot.webflux)
 
     implementation(libs.reactor.kotlin.extensions)
+
+    implementation(project(":lib-pb"))
 }
 
 tasks.test {
