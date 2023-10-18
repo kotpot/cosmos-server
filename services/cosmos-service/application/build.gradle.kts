@@ -8,7 +8,6 @@ plugins {
 
 dependencies {
     implementation(libs.kotlin.reflect)
-    implementation(libs.kotlin.jackson)
 
     implementation(libs.kotlinx.coroutines.reactor)
 
@@ -19,7 +18,10 @@ dependencies {
 
     implementation(libs.mysql.jconnector)
 
+    implementation(project(":module-auth"))
+
     developmentOnly(libs.springboot.devtools)
+
     testImplementation(libs.springboot.test)
     testImplementation(libs.springboot.restdocs.test)
     testImplementation(libs.reactor.test)
