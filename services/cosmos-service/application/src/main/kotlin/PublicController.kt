@@ -1,14 +1,16 @@
 package org.kotpot.cosmos
 
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 
 @RestController
-class CheckController {
+@RequestMapping("/public")
+class PublicController {
 
-    @GetMapping("/public/check")
-    suspend fun hello(): String {
+    @GetMapping("/check")
+    suspend fun check(): String {
         return "Hello Cosmos!"
     }
 }
