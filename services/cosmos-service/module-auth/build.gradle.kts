@@ -1,12 +1,10 @@
 plugins {
-    alias(libs.plugins.kotlin.spring)
-    alias(libs.plugins.spring.boot)
-    alias(libs.plugins.spring.dependency.management)
     alias(libs.plugins.kotlin.serialization)
 }
 
 dependencies {
 
+    implementation(libs.kotlin.reflect)
     implementation(libs.springboot.redis)
     implementation(libs.springboot.webflux)
 
@@ -18,6 +16,10 @@ dependencies {
     implementation(libs.ktor.client.cio)
 
     implementation(project(":lib-pb"))
+}
+
+springBoot {
+    mainClass.value("org.kotpot.cosmos.CosmosServerApplicationKt")
 }
 
 tasks.test {
