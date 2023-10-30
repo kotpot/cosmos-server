@@ -15,10 +15,8 @@ class RoutePlugin : KtorPlugin() {
 
     context(Application) override fun install() {
 
-        val path = env.getProperty("spring.mvc.servlet.path", String::class.java, "/")
-
         routing {
-            route(path) {
+            route(properties.path) {
                 register()
             }
         }
