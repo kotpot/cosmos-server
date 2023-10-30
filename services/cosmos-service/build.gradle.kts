@@ -18,7 +18,7 @@ repositories {
     mavenCentral()
 }
 
-val springSubModels = arrayOf("module-auth")
+val springSubModels = arrayOf("lib-ktor", "module-auth")
 
 subprojects {
 

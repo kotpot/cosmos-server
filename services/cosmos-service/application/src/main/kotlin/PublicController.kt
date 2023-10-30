@@ -1,16 +1,20 @@
 package org.kotpot.cosmos
 
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
-import org.springframework.web.bind.annotation.RestController
+import io.ktor.server.application.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
+import org.kotpot.cosmos.ktor.server.plugins.KtorRouter
+import org.springframework.stereotype.Controller
 
+@Controller
+class PublicRouter : KtorRouter {
 
-@RestController
-@RequestMapping("/public")
-class PublicController {
+    context(Route)
+    fun check() = get("/check") {
+        call.respond("Hello")
+    }
 
-    @GetMapping("/check")
-    suspend fun check(): String {
-        return "Hello Cosmos!"
+    override fun Route.register() {
+        check()
     }
 }

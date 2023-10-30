@@ -9,15 +9,12 @@ plugins {
 }
 
 dependencies {
+
     implementation(libs.kotlin.reflect)
 
-    implementation(libs.kotlinx.coroutines.reactor)
+    implementation(project(":lib-ktor"))
 
     implementation(libs.springboot.redis)
-
-    implementation(libs.springboot.webflux)
-
-    implementation(libs.reactor.kotlin.extensions)
 
     implementation(libs.mysql.jconnector)
 
@@ -30,10 +27,6 @@ dependencies {
     }
 
     developmentOnly(libs.springboot.devtools)
-
-    testImplementation(libs.springboot.test)
-    testImplementation(libs.springboot.restdocs.test)
-    testImplementation(libs.reactor.test)
 
     implementation("org.slf4j:slf4j-api:2.0.9")
     // implementation("org.slf4j:slf4j-simple:2.0.9")

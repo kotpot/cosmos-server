@@ -6,9 +6,6 @@ dependencies {
 
     implementation(libs.kotlin.reflect)
     implementation(libs.springboot.redis)
-    implementation(libs.springboot.webflux)
-
-    implementation(libs.reactor.kotlin.extensions)
 
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.serialization)
