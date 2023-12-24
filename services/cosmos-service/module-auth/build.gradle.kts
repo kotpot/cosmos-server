@@ -12,7 +12,6 @@ dependencies {
     implementation(libs.ktor.client.jackson)
     implementation(libs.ktor.client.cio)
 
-    implementation(project(":lib-pb"))
 }
 
 springBoot {
