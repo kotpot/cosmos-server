@@ -7,26 +7,27 @@ plugins {
     alias(libs.plugins.kotlin.spring) apply false
     alias(libs.plugins.spring.boot) apply false
     alias(libs.plugins.spring.dependency.management) apply false
+    alias(wireLibs.plugins.wire) apply false
 }
 
 group = "org.kotpot"
 version = "0.0.1-SNAPSHOT"
 
 val sharePlugins: LibrariesForLibs.PluginAccessors = libs.plugins
-
 repositories {
     mavenCentral()
 }
 
-val springSubModels = arrayOf("lib-ktor", "module-auth")
+val springSubModels = with(projects) {
+    listOf(libPb, libKtor, moduleAuth)
+}.map { it.name }
 
 subprojects {
-
-    if (name == "lib-pb") return@subprojects
 
     apply(plugin = sharePlugins.kotlin.jvm.get().pluginId)
 
     if (name in springSubModels) {
+
         apply(plugin = sharePlugins.kotlin.spring.get().pluginId)
         apply(plugin = sharePlugins.spring.boot.get().pluginId)
         apply(plugin = sharePlugins.spring.dependency.management.get().pluginId)

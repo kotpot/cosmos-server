@@ -8,7 +8,8 @@ typealias RouteRegister = Route.() -> Any
 
 interface KtorRouter {
 
-    val routes: Set<RouteRegister>
+    context(Route)
+    fun register()
 }
 
 @Component
@@ -26,7 +27,7 @@ class RoutePlugin : KtorPlugin() {
     private fun Route.register() {
         val routers = context.getBeansOfType(KtorRouter::class.java).values
         for (router in routers) {
-            router.routes.forEach { it.invoke(this) }
+            router.register()
         }
     }
 }

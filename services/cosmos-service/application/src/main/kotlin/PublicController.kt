@@ -9,12 +9,12 @@ import org.springframework.stereotype.Controller
 @Controller
 class PublicRouter : KtorRouter {
 
-    override val routes = setOf(
-        ::check
-    )
+    context(Route) override fun register() {
+        check()
+    }
 
     context(Route)
     fun check() = get("/check") {
-        call.respond("Hello")
+        call.respond("Hello Cosmos!")
     }
 }

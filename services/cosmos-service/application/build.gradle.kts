@@ -12,13 +12,14 @@ dependencies {
 
     implementation(libs.kotlin.reflect)
 
-    implementation(project(":lib-ktor"))
+    implementation(projects.libKtor)
+    implementation(projects.libPb)
+
+    implementation(projects.moduleAuth)
 
     implementation(libs.springboot.redis)
 
     implementation(libs.mysql.jconnector)
-
-    implementation(project(":module-auth"))
 
     val isMacOS = System.getProperty("os.name").startsWith("Mac OS")
     val architecture = System.getProperty("os.arch").lowercase(Locale.ENGLISH)

@@ -4,3 +4,9 @@
 [submodule "services/qq-music-service"]
 	path = services/qq-music-service
 	url = https://github.com/jsososo/QQMusicApi.git
+[submodule "services/cosmos-service/lib-pb/proto"]
+	path = services/cosmos-service/lib-pb/proto
+	url = https://github.com/kotpot/cosmos-protocol.git
+[submodule "services/cosmos-service/krpc-wire-plugin"]
+	path = services/cosmos-service/krpc-wire-plugin
+	url = https://github.com/szkug/krpc-wire-plugin.git
