@@ -5,6 +5,7 @@ import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import okio.ByteString
 import org.kotpot.cosmos.ktor.server.plugins.KtorRouter
 import org.kotpot.cosmos.pb.common.ProtocolServiceCall
 import org.kotpot.cosmos.pb.test.rpc.KrpcTestService
@@ -16,10 +17,10 @@ class ProtocolController(
 ): KtorRouter {
 
     context(Route) override fun register() {
-        get("/protocol/call") {
+        post("/protocol/call") {
             val body = call.receive<ByteArray>()
             val response = dispatchServiceFunction(body)
-            call.respondBytes(response)
+            call.respondBytes(response, ContentType.Application.ProtoBuf)
         }
     }
 

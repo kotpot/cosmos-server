@@ -10,11 +10,11 @@ import org.springframework.stereotype.Controller
 class PublicRouter : KtorRouter {
 
     context(Route) override fun register() {
-        check()
+        hello()
     }
 
     context(Route)
-    fun check() = get("/check") {
+    fun hello() = get("/hello") {
         call.respond("Hello Cosmos!")
     }
 }
